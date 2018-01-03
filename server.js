@@ -52,11 +52,11 @@ app.post('/api/books', function (req, res) {
 
   // this code will only add an author to a book if the author already exists
   db.Author.findOne({name: req.body.author}, function(err, author) {
-    if (author) {
-      newBook.author = author;
-    } else {
-      newBook.author = req.body.author;
-    }
+    // if (author) {
+    //   newBook.author = author;
+    // } else {
+    //   newBook.author = req.body.author;
+    // }
     // add newBook to database
     newBook.save(function(err, book){
       if (err) {
